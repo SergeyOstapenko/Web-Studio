@@ -5,12 +5,12 @@
 @import "./utils/visually-hidden";
 
 // Base styles
-@import "./base/base";
-@import "./base/reset";
-@import "./base/typography";
+@import "./base/module";
+
 
 // Components style
 @import "./components/btn";
+@import "./components/mobile-menu";
 
 // Layouts style
 @import "./layouts/header";
