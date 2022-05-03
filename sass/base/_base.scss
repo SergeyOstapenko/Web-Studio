@@ -3,6 +3,10 @@ body {
     color: var(--primary-text-color);
     font-family: var(--font-body);
     letter-spacing: 0.03em;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 

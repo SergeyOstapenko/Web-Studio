@@ -1,4 +1,7 @@
 .menu-button {
+    position: relative;
+    z-index: 10;
+
     width: 40px;
     height: 40px;
     padding: 0;
@@ -17,18 +20,36 @@
     }
 }
 
-.menu-icon-close {
+.menu-button .menu-icon-close {
     opacity: 0;
 }
 
-.menu {
+.menu-button.is-open .menu-icon-close {
+    opacity: 1;
+}
+
+.menu-button.is-open .menu-icon-open {
+    opacity: 0;
+}
+
+.menu-icon:hover,
+.menu-icon:focus {
+    fill: var(--accent-text-color);
+}
+
+.mobile-menu {
     position: fixed;
     top: 0;
     left: 0;
 
+    display: flex;
+    flex-direction: column;
+
     width: 100vw;
     height: 100vh;
     padding: 48px 40px;
+
+    transform: translateX(100%);
 
     background-color: var(--primary-bg-color);
 
@@ -37,10 +58,13 @@
     }
 }
 
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
 .menu__nav-item {
-    margin-bottom: 32px;
-    &:last-child {
-        margin-bottom: 0;
+    &:not(:last-child) {
+        margin-bottom: 32px;
     }
 }
 
@@ -58,41 +82,75 @@
     }
 }
 
+.menu__nav-link--current {
+    color: var(--accent-text-color);
+}
+
 .menu-address__list {
     margin-top: auto;
+    margin-bottom: 64px;
 }
 
 .menu-address__item {
-    margin-bottom: 32px;
 
-    &:last-child {
-        margin-bottom: 0;
+    &:not(:last-child) {
+        margin-bottom: 32px;
     }
 }
 
-.menu-address__link {
+.menu-address__link--tel {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 1.16;
+    font-size: 34px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
 
-    color: var(--title-text-color);
+    color: var(--accent-text-color);
 
-    &:hover,
-    &:focus {
+    @media screen and (max-width: 479px) {
         font-size: 24px;
-        line-height: 1.16;
-        color: var(--accent-text-color);
     }
 }
+
+.menu-address__link--email {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    color: var(--title-text-color);     
+}
+
 
 .menu-socials__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: auto;
 }
 
+
 .menu-socials__item {
+    display: flex;
+
+    @media screen and (max-width: 479px) {
+        margin-bottom: 10px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &:not(:last-child)::after {
+        content: "";
+        display: block;
+        margin-left: 10px;
+    
+        width: 1px;
+        border: 1px solid rgba(33, 33, 33, 0.2)
+       
+    }
+}
+
+.menu-socials__link {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.22;
