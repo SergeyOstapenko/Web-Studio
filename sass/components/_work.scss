@@ -1,7 +1,12 @@
  /* Work section */
 
  .work {
-    padding-bottom: 94px;
+    display: none;
+
+    @include mq (desktop) {
+        display: block;
+        padding-bottom: 94px;
+    }
 }
 
 .work__list {
