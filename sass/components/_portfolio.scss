@@ -86,7 +86,7 @@
     padding: 63px 24px;
 
     font-weight: 400;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1.56;
     letter-spacing: 0.03em;
 
@@ -95,6 +95,10 @@
 
     .portfolio-link:hover &{
         transform: translateY(0);  
+    }
+
+    @include mq (mobile) {
+        font-size: 18px;
     }
 }
 
