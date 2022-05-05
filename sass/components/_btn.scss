@@ -44,15 +44,26 @@
 
 .button-item:nth-child(n+2) {
     margin-left: 8px;
-
-    &:nth-child(4) {
-        margin-left: 0;  
-    }
-
+    margin-bottom: 15px;
+    
     @include mq (tablet) {
         margin-left: 8px;
+        margin-bottom: 0;
     }    
 }
+.button-item:nth-child(4) {
+    margin-left: 0; 
+    
+    @include mq (tablet) {
+        margin-left: 8px;
+    }
+}
+
+.button-item:nth-last-child(-n+2) {
+    margin-bottom: 0;  
+}
+
+
 
 .button.secondary {
     padding: 6px 22px;

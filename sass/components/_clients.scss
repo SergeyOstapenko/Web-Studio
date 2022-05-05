@@ -11,18 +11,17 @@
 }
 
 .clients-list {
-    margin-right: -30px;
-    margin-bottom: -30px;
+    margin: -15px;
 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
    
 }
 
 .clients-item {
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin: 15px;
 
 }
 
